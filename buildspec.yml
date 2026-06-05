@@ -6,7 +6,7 @@ phases:
       python: 3.11
     commands:
       - echo "Install dependencies for Taskcat..."
-      - yum install -y gcc python3-devel libffi-devel
+      - python3 -m pip install --upgrade pip setuptools wheel
       - python3 -m pip install --upgrade pip
       - echo "Install cfn-lint and taskcat..."
       - pip install cfn-lint taskcat
