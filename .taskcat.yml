@@ -1,0 +1,10 @@
+project:
+  name: lab-infra-task2
+  regions:
+    - us-east-1
+tests:
+  default:
+    template: template.yaml
+    parameters:
+      EnvironmentName: TaskcatTest
+      InstanceType: t2.micro
