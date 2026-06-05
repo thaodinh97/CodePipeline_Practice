@@ -7,7 +7,6 @@ phases:
     commands:
       - echo "Install dependencies for Taskcat..."
       - python3 -m pip install --upgrade pip setuptools wheel
-      - python3 -m pip install --upgrade pip
       - echo "Install cfn-lint and taskcat..."
       - pip install cfn-lint taskcat
   pre_build:
@@ -17,7 +16,8 @@ phases:
   build:
     commands:
       - echo "Running taskcat to test deployment..."
-      - taskcat test run
+      - taskcat test run --verbose
 artifacts:
   files:
     - template.yaml
+    - .taskcat.yml
