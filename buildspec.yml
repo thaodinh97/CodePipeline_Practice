@@ -5,7 +5,10 @@ phases:
     runtime-versions:
       python: 3.11
     commands:
-      - echo "Installing cfn-lint and taskcat..."
+      - echo "Install dependencies for Taskcat..."
+      - dnf install -y gcc python3-devel libffi-devel openssl-devel
+      - python3 -m pip install --upgrade pip
+      - echo "Install cfn-lint and taskcat..."
       - pip install cfn-lint taskcat
   pre_build:
     commands:
