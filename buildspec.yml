@@ -6,7 +6,7 @@ phases:
       python: 3.11
     commands:
       - echo "Install dependencies for Taskcat..."
-      - python3 -m pip install --upgrade pip setuptools wheel
+      - python3 -m pip install --upgrade pip "setuptools<70.0.0" wheel
       - echo "Install cfn-lint and taskcat..."
       - pip install cfn-lint taskcat
   pre_build:
